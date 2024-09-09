@@ -1,6 +1,6 @@
 .row-cell {
-    border-bottom: 1px solid #f1f1f4;
-    border-right: 1px solid #f1f1f4;
+    border-bottom: 1px solid var(--table-divider-color);
+    border-right: 1px solid var(--table-divider-color);
     height: 66px;
     padding: 0px 20px 0px 20px;
     gap: 10px;
@@ -16,5 +16,5 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 14px;
-    color: #252F4A;
+    color: var(--table-row-text-color);
 }

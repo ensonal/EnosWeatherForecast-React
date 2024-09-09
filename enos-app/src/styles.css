@@ -11,8 +11,9 @@
 
     /* Table styles */
     --table-divider-color: #F1F1F4;
-    --table-column-header-background-color: #FCFCFC;
-    --table-column-header-text-color: #4B5675;
+    --table-column-background-color: #FCFCFC;
+    --table-column-text-color: #4B5675;
+    --table-row-text-color: #252F4A;
 
     .default-page{
         padding-left: var(--default-page-padding);
