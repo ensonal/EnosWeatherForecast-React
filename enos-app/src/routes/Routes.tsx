@@ -5,11 +5,11 @@ export function Routes() {
     const routeConfig = [
         {
           path: "/",
-          component: lazy(() => import("../pages/HomePage"))
+          component: lazy(() => import("../pages/HomePage/HomePage"))
         },
         {
           path: "/home",
-          component: lazy(() => import("../pages/HomePage"))
+          component: lazy(() => import("../pages/HomePage/HomePage"))
         }
       ];
 
