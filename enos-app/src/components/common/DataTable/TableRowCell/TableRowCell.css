@@ -1,0 +1,20 @@
+.row-cell {
+    border-bottom: 1px solid var(--table-divider-color);
+    border-right: 1px solid var(--table-divider-color);
+    height: 66px;
+    padding: 0px 20px 0px 20px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.last-column {
+    border-right: none;
+}
+
+.row-cell-content {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    color: var(--table-row-text-color);
+}

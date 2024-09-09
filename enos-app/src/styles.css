@@ -9,6 +9,12 @@
     /* Card styles */
     --default-card-border-color: #DBDFE9;
 
+    /* Table styles */
+    --table-divider-color: #F1F1F4;
+    --table-column-background-color: #FCFCFC;
+    --table-column-text-color: #4B5675;
+    --table-row-text-color: #252F4A;
+
     .default-page{
         padding-left: var(--default-page-padding);
         padding-right: var(--default-page-padding);
