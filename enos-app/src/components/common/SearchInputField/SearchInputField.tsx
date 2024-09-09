@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./SearchInputField.css";
-import searchIcon from "../../assets/icons/searchIcon.svg";
+import searchIcon from "../../../assets/icons/searchIcon.svg";
 
 export function SearchInputField() {
     const [searchTerm, setSearchTerm] = useState<string>();
