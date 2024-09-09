@@ -1,0 +1,11 @@
+.forecast-main-container {
+    gap: 40px;
+}
+
+.container-one {
+    flex: 2;
+}
+
+.container-two {
+    flex: 1;
+}

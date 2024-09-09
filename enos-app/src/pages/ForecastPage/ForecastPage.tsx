@@ -1,9 +1,9 @@
-import { ForecastContainer } from "../../modules/forecast/ui/ForecastContainer";
+import { ForecastMainContainer } from "../../modules/forecast/ui/ForecastMainContainer/ForecastMainContainer";
 
 export default function ForecastPage() {
     return (
         <div className="default-page">
-            <ForecastContainer />
+            <ForecastMainContainer />
         </div>
     );
 }
