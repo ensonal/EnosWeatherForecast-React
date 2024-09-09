@@ -1,4 +1,4 @@
-import { SearchInputField } from "../../../../components/SearchInputField/SearchInputField";
+import { SearchInputField } from "../../../../components/common/SearchInputField/SearchInputField";
 import { WeatherSummaryCard } from "../../components/WeatherSummaryCard/WeatherSummaryCard";
 
 export function SearchSummaryContainer() {
