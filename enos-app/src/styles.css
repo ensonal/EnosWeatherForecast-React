@@ -1,7 +1,7 @@
 :root {
     --primary-color: #296573;
     --page-default-background-color: #ffffff;
-    --text-default-color: #ffffff;
+    --text-default-color: #313131;
 
     /* Layout Styles */
     --default-page-padding: 12%;
@@ -17,5 +17,6 @@
 
     .default-card{
         border: 1px solid var(--default-card-border-color);
+        border-radius: 12px;
     }
 }
