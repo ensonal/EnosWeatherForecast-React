@@ -6,8 +6,16 @@
     /* Layout Styles */
     --default-page-padding: 12%;
 
+    /* Card styles */
+    --default-card-border-color: #DBDFE9;
+
     .default-page{
         padding-left: var(--default-page-padding);
         padding-right: var(--default-page-padding);
+        margin-top: 40px;
+    }
+
+    .default-card{
+        border: 1px solid var(--default-card-border-color);
     }
 }
