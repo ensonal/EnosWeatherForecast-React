@@ -5,4 +5,9 @@
 
     /* Layout Styles */
     --default-page-padding: 12%;
+
+    .default-page{
+        padding-left: var(--default-page-padding);
+        padding-right: var(--default-page-padding);
+    }
 }
