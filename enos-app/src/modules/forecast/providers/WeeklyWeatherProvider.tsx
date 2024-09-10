@@ -1,12 +1,15 @@
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
 import { get } from "../../../api/axiosClient";
 import { mapWeatherData, WeatherData } from "../models/WeatherData";
 
 interface WeatherContextType {
-    weatherData: WeatherData[] | null;
+    weatherData: WeatherData[];
     fetchWeather: (city: string) => Promise<void>;
+    cache: { [city: string]: WeatherData[] };
     loading: boolean;
     error: string | null;
+    setSelectedWeatherData: (data: WeatherData) => void;
+    selectedWeatherData?: WeatherData;
 }
 
 export const WeatherContext = createContext<WeatherContextType | undefined>(undefined);
@@ -16,10 +19,15 @@ interface WeatherProviderProps {
 }
 
 export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) => {
-    const [weatherData, setWeatherData] = useState<WeatherData[] | null>(null);
+    const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
+    const [selectedWeatherData, setSelectedWeatherData] = useState<WeatherData>(weatherData[0]);
     const [cache, setCache] = useState<{ [city: string]: WeatherData[] }>({});
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        setSelectedWeatherData(weatherData[0]);
+    }, [weatherData]);
 
     const fetchWeather = async (city: string) => {
         if (cache[city]) {
@@ -34,8 +42,6 @@ export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) =>
 
         try {
             const response = await get(`/forecast/daily?city=${city}&key=${API_KEY}&days=7&units=M`);
-            console.log(response);
-
             const transformedData = mapWeatherData(response);
 
             setWeatherData(transformedData);
@@ -51,7 +57,17 @@ export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) =>
     };
 
     return (
-        <WeatherContext.Provider value={{ weatherData, fetchWeather, loading, error }}>
+        <WeatherContext.Provider
+            value={{
+                weatherData,
+                fetchWeather,
+                cache,
+                loading,
+                error,
+                setSelectedWeatherData,
+                selectedWeatherData
+            }}
+        >
             {children}
         </WeatherContext.Provider>
     );
