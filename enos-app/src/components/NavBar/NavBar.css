@@ -1,0 +1,18 @@
+.custom-nav {
+    height: 80px;
+    background-color: var(--primary-color);
+    padding-left: var(--default-page-padding);
+    padding-right: var(--default-page-padding);
+}
+
+.nav-header {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 29.05px;
+    color: #FFFFFF;
+}
+
+.nav-logo {
+    width: 29px;
+    height: 29px;
+}

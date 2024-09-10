@@ -1,4 +1,28 @@
 :root {
     --primary-color: #296573;
-    --background-color: #ffffff;
+    --page-default-background-color: #ffffff;
+    --text-default-color: #313131;
+
+    /* Layout Styles */
+    --default-page-padding: 12%;
+
+    /* Card styles */
+    --default-card-border-color: #DBDFE9;
+
+    /* Table styles */
+    --table-divider-color: #F1F1F4;
+    --table-column-background-color: #FCFCFC;
+    --table-column-text-color: #4B5675;
+    --table-row-text-color: #252F4A;
+
+    .default-page{
+        padding-left: var(--default-page-padding);
+        padding-right: var(--default-page-padding);
+        margin-top: 40px;
+    }
+
+    .default-card{
+        border: 1px solid var(--default-card-border-color);
+        border-radius: 12px;
+    }
 }
