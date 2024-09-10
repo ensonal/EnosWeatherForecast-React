@@ -1,0 +1,45 @@
+.current-weather-card {
+    padding: 40px;
+    gap: 40px;
+}
+
+.degree-text {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 67.77px;
+    color: #296573;
+}
+
+.city-name {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.73px;
+    color: #313131;
+}
+
+.date-time {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    color: #313131;
+}
+
+.general-info {
+    gap: 10px;
+}
+
+.weather-status {
+    gap: 10px;
+}
+
+.weather-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.weather-status-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    color: #296573;
+}
