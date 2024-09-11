@@ -43,3 +43,7 @@
     line-height: 16.94px;
     color: #296573;
 }
+
+.spinner-grow {
+    color: var(--primary-color) !important;
+}
