@@ -29,6 +29,7 @@ export function SearchInputField() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search a city"
+                disabled={loading}
             />
             <img
                 src={searchIcon}
