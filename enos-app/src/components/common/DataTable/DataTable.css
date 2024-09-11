@@ -16,3 +16,11 @@
     font-weight: 600;
     text-align: left;
 }
+
+.table-row {
+    display: contents;
+}
+
+.table-row:hover .row-cell {
+    background-color: #f0f0f0;
+}

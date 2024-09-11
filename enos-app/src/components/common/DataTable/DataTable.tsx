@@ -12,13 +12,13 @@ interface DataTableProps {
     title: string;
     columns: Column[];
     data: any[];
+    onRowClick: (row: any) => void;
 }
 
-const DataTable: React.FC<DataTableProps> = ({ title, columns, data }) => {
+const DataTable: React.FC<DataTableProps> = ({ title, columns, data, onRowClick }) => {
     const containerStyle: React.CSSProperties = {
         display: "grid",
-        gridTemplateColumns: `repeat(${columns.length}, 1fr)`,
-        gap: "0",
+        gridTemplateColumns: `repeat(${columns.length}, auto)`,
         borderRadius: "10px"
     };
 
@@ -36,15 +36,17 @@ const DataTable: React.FC<DataTableProps> = ({ title, columns, data }) => {
                     />
                 ))}
 
-                {data.map((row, rowIndex) =>
-                    columns.map((column, colIndex) => (
-                        <TableRowCell
-                            key={`${rowIndex}-${colIndex}`}
-                            content={row[column.accessor]}
-                            isLastColumn={colIndex === columns.length - 1}
-                        />
-                    ))
-                )}
+                {data.map((row, rowIndex) => (
+                    <div key={rowIndex} className="table-row" onClick={() => onRowClick(row)}>
+                        {columns.map((column, colIndex) => (
+                            <TableRowCell
+                                key={`${rowIndex}-${colIndex}`}
+                                content={row[column.accessor]}
+                                isLastColumn={colIndex === columns.length - 1}
+                            />
+                        ))}
+                    </div>
+                ))}
             </div>
         </div>
     );
