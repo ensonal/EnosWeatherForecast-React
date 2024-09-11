@@ -5,7 +5,7 @@ import { useWeatherContext } from "../../hooks/useWeatherContext";
 export function CurrentWeatherCard() {
     const { selectedWeatherData } = useWeatherContext();
 
-    const formattedDate = selectedWeatherData?.date.split(",")[0] + " " + selectedWeatherData?.day;
+    const formattedDate = selectedWeatherData?.date.split(",")[0] + ", " + selectedWeatherData?.day;
     const iconPath = selectedWeatherData ? require(`../../../../assets/icons/weather/${selectedWeatherData.weather.icon}.png`) : c04d;
 
     return (
