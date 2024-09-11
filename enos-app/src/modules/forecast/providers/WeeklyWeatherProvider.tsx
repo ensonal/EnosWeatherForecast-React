@@ -20,18 +20,15 @@ interface WeatherProviderProps {
 
 export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) => {
     const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
-    const [selectedWeatherData, setSelectedWeatherData] = useState<WeatherData>(weatherData[0]);
+    const [selectedWeatherData, setSelectedWeatherData] = useState<WeatherData>();
     const [cache, setCache] = useState<{ [city: string]: WeatherData[] }>({});
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        setSelectedWeatherData(weatherData[0]);
-    }, [weatherData]);
-
     const fetchWeather = async (city: string) => {
         if (cache[city]) {
             setWeatherData(cache[city]);
+            setSelectedWeatherData(cache[city][0]);
             return;
         }
 
@@ -42,9 +39,16 @@ export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) =>
 
         try {
             const response = await get(`/forecast/daily?city=${city}&key=${API_KEY}&days=7&units=M`);
+
+            if (!response) {
+                setWeatherData([]);
+                setSelectedWeatherData(undefined);
+            }
+
             const transformedData = mapWeatherData(response);
 
             setWeatherData(transformedData);
+            setSelectedWeatherData(transformedData[0]);
             setCache((prevCache) => ({
                 ...prevCache,
                 [city]: transformedData
