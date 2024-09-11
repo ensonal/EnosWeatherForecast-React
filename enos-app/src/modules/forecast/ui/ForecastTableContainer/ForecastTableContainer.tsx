@@ -43,6 +43,7 @@ export function ForecastTableContainer() {
                     columns={columns}
                     data={forecastData ? forecastData : []}
                     onRowClick={handleRowClick}
+                    loading={loading}
                 />
             )}
         </div>
