@@ -1,8 +1,15 @@
+import { useEffect } from "react";
 import DataTable from "../../../../components/common/DataTable/DataTable";
 import { useWeatherContext } from "../../hooks/useWeatherContext";
+import forecastWelcomeBanner from "../../../../assets/images/forecast-welcome-banner.png";
+import forecastEmptyStateBanner from "../../../../assets/images/forecast-empty-state.png";
 
 export function ForecastTableContainer() {
-    const { weatherData, loading, error } = useWeatherContext();
+    const { weatherData, loading } = useWeatherContext();
+
+    useEffect(() => {
+        console.log("Weather Data: ", weatherData);
+    }, [weatherData]);
 
     const columns = [
         { header: "Days", accessor: "day" },
@@ -18,11 +25,21 @@ export function ForecastTableContainer() {
         high: day.highestTemp
     }));
 
-    const title = `Weather Forecast for ${weatherData?.[0]?.city}`;
+    const title = weatherData && weatherData.length > 0 ? `Weather Forecast for ${weatherData[0]?.city}` : "";
 
     return (
         <div className="w-100">
-            <DataTable title={title} columns={columns} data={forecastData ? forecastData : []} />
+            {weatherData === undefined ? (
+                <img src={forecastWelcomeBanner} alt="Welcome to the weather forecast" className="w-100" />
+            ) : weatherData.length === 0 ? (
+                <img
+                    src={forecastEmptyStateBanner}
+                    alt="No weather forecast data available"
+                    className="w-100"
+                />
+            ) : (
+                <DataTable title={title} columns={columns} data={forecastData ? forecastData : []} />
+            )}
         </div>
     );
 }
