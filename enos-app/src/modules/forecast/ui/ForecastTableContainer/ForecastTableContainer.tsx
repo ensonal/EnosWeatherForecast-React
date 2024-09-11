@@ -1,13 +1,8 @@
-import { useEffect } from "react";
 import DataTable from "../../../../components/common/DataTable/DataTable";
 import { useWeatherContext } from "../../hooks/useWeatherContext";
 
 export function ForecastTableContainer() {
     const { weatherData, loading, error } = useWeatherContext();
-
-    useEffect(() => {
-        console.log(weatherData);
-    });
 
     const columns = [
         { header: "Days", accessor: "day" },
@@ -23,9 +18,11 @@ export function ForecastTableContainer() {
         high: day.highestTemp
     }));
 
+    const title = `Weather Forecast for ${weatherData[0]?.city}`;
+
     return (
         <div className="w-100">
-            <DataTable title="Weather Forecast for Ankara" columns={columns} data={forecastData ? forecastData : []} />
+            <DataTable title={title} columns={columns} data={forecastData ? forecastData : []} />
         </div>
     );
 }
