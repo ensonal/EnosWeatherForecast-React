@@ -5,7 +5,6 @@ import { mapWeatherData, WeatherData } from "../models/WeatherData";
 interface WeatherContextType {
     weatherData: WeatherData[] | undefined;
     fetchWeather: (city: string) => Promise<void>;
-    cache: { [city: string]: WeatherData[] };
     loading: boolean;
     error: string | null;
     setSelectedWeatherData: (data: WeatherData) => void;
@@ -65,7 +64,6 @@ export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) =>
             value={{
                 weatherData,
                 fetchWeather,
-                cache,
                 loading,
                 error,
                 setSelectedWeatherData,

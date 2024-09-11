@@ -1,15 +1,10 @@
-import { useEffect } from "react";
 import DataTable from "../../../../components/common/DataTable/DataTable";
 import { useWeatherContext } from "../../hooks/useWeatherContext";
 import forecastWelcomeBanner from "../../../../assets/images/forecast-welcome-banner.png";
 import forecastEmptyStateBanner from "../../../../assets/images/forecast-empty-state.png";
 
 export function ForecastTableContainer() {
-    const { weatherData, loading } = useWeatherContext();
-
-    useEffect(() => {
-        console.log("Weather Data: ", weatherData);
-    }, [weatherData]);
+    const { weatherData, loading, setSelectedWeatherData } = useWeatherContext();
 
     const columns = [
         { header: "Days", accessor: "day" },
@@ -18,14 +13,19 @@ export function ForecastTableContainer() {
         { header: "Highest Temp.", accessor: "high" }
     ];
 
-    const forecastData = weatherData?.map((day) => ({
-        day: day.day,
-        date: day.date,
-        low: day.lowestTemp,
-        high: day.highestTemp
+    const forecastData = weatherData?.map((data) => ({
+        day: data.day,
+        date: data.date,
+        low: data.lowestTemp,
+        high: data.highestTemp,
+        defaultData: data
     }));
 
     const title = weatherData && weatherData.length > 0 ? `Weather Forecast for ${weatherData[0]?.city}` : "";
+
+    const handleRowClick = (row: any) => {
+        setSelectedWeatherData(row.defaultData);
+    };
 
     return (
         <div className="w-100">
@@ -38,7 +38,12 @@ export function ForecastTableContainer() {
                     className="w-100"
                 />
             ) : (
-                <DataTable title={title} columns={columns} data={forecastData ? forecastData : []} />
+                <DataTable
+                    title={title}
+                    columns={columns}
+                    data={forecastData ? forecastData : []}
+                    onRowClick={handleRowClick}
+                />
             )}
         </div>
     );

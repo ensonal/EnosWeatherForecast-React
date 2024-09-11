@@ -6,6 +6,13 @@
     gap: 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.row-cell:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
 
 .last-column {
