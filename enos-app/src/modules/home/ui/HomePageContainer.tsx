@@ -21,7 +21,7 @@ export function HomePageContainer() {
                     day. No matter where you are, get real-time weather updates before stepping outside.
                 </p>
                 <div className="button-container" onClick={handleClick}>
-                    <p className="action-text m-0">Get started</p>
+                    <p className="action-text m-0">Let's try</p>
                 </div>
             </div>
             <div className="container-one">
