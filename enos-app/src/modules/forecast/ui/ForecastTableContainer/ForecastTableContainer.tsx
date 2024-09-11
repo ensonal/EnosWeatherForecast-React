@@ -2,9 +2,12 @@ import DataTable from "../../../../components/common/DataTable/DataTable";
 import { useWeatherContext } from "../../hooks/useWeatherContext";
 import forecastWelcomeBanner from "../../../../assets/images/forecast-welcome-banner.png";
 import forecastEmptyStateBanner from "../../../../assets/images/forecast-empty-state.png";
+import { useScreenSize } from "../../../../providers/ScreenSizeProvider";
+import { WeatherCardTable } from "../../components/WeatherCardTable/WeatherCardTable";
 
 export function ForecastTableContainer() {
     const { weatherData, loading, setSelectedWeatherData } = useWeatherContext();
+    const { isMobile } = useScreenSize();
 
     const columns = [
         { header: "Days", accessor: "day" },
@@ -36,6 +39,14 @@ export function ForecastTableContainer() {
                     src={forecastEmptyStateBanner}
                     alt="No weather forecast data available"
                     className="w-100"
+                />
+            ) : isMobile ? (
+                <WeatherCardTable
+                    title={title}
+                    columns={columns}
+                    data={forecastData ? forecastData : []}
+                    onRowClick={handleRowClick}
+                    loading={loading}
                 />
             ) : (
                 <DataTable

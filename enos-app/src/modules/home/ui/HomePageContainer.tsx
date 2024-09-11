@@ -25,7 +25,7 @@ export function HomePageContainer() {
                 </div>
             </div>
             <div className="container-one">
-                <img src={banner} alt="Welcome to Enos" width={700} style={{ objectFit: "contain" }} />
+                <img src={banner} alt="Welcome to Enos" width={700} className="w-100 object-fit-contain" />
             </div>
         </div>
     );

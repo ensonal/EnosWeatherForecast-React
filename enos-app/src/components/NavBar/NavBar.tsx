@@ -10,8 +10,8 @@ export function NavBar() {
     };
 
     return (
-        <div className="custom-nav d-flex align-items-center">
-            <div className="d-flex flex-row justify-content-between w-100">
+        <div className="custom-nav d-flex">
+            <div className="d-flex flex-row align-items-center justify-content-between w-100">
                 <p className="nav-header m-0" onClick={handleClick}>
                     Enos Weather Forecaster
                 </p>
