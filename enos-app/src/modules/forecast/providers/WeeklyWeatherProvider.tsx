@@ -1,9 +1,9 @@
-import React, { createContext, useState, ReactNode, useEffect } from "react";
+import React, { createContext, useState, ReactNode } from "react";
 import { get } from "../../../api/axiosClient";
 import { mapWeatherData, WeatherData } from "../models/WeatherData";
 
 interface WeatherContextType {
-    weatherData: WeatherData[];
+    weatherData: WeatherData[] | undefined;
     fetchWeather: (city: string) => Promise<void>;
     cache: { [city: string]: WeatherData[] };
     loading: boolean;
@@ -19,7 +19,7 @@ interface WeatherProviderProps {
 }
 
 export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) => {
-    const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
+    const [weatherData, setWeatherData] = useState<WeatherData[] | undefined>(undefined);
     const [selectedWeatherData, setSelectedWeatherData] = useState<WeatherData>();
     const [cache, setCache] = useState<{ [city: string]: WeatherData[] }>({});
     const [loading, setLoading] = useState<boolean>(false);
