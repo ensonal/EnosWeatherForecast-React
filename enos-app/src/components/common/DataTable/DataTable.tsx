@@ -2,11 +2,7 @@ import React from "react";
 import TableColumnCell from "./TableColumnCell/TableColumnCell";
 import TableRowCell from "./TableRowCell/TableRowCell";
 import "./DataTable.css";
-
-interface Column {
-    header: string;
-    accessor: string;
-}
+import { Column } from "./models/Column";
 
 interface DataTableProps {
     title: string;
