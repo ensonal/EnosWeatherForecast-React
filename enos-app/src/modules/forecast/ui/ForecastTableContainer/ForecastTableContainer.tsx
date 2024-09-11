@@ -18,7 +18,7 @@ export function ForecastTableContainer() {
         high: day.highestTemp
     }));
 
-    const title = `Weather Forecast for ${weatherData[0]?.city}`;
+    const title = `Weather Forecast for ${weatherData?.[0]?.city}`;
 
     return (
         <div className="w-100">

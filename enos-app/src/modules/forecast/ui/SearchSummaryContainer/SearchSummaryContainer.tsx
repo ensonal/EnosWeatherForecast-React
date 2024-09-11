@@ -11,8 +11,8 @@ export function SearchSummaryContainer() {
         <div className="d-flex flex-column gap-3">
             <SearchInputField />
             <DisplayEmptyStateCard />
-            {weatherData.length > 0 ? <CurrentWeatherCard /> : null}
-            {Object.keys(cache).length === 0 && weatherData.length === 0 ? <SelectInfoCard /> : null}
+            {weatherData?.length! > 0 ? <CurrentWeatherCard /> : null}
+            {Object.keys(cache).length === 0 && weatherData?.length === 0 ? <SelectInfoCard /> : null}
         </div>
     );
 }
