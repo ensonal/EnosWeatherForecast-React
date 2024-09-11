@@ -1,16 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { HomePageContainer } from "../../modules/home/ui/HomePageContainer";
 
 export default function HomePage() {
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate("/forecast");
-    };
-
     return (
         <div className="default-page">
-            <h1 onClick={handleClick}>Home Page</h1>
-            <p>Welcome to the Home Page</p>
+            <HomePageContainer />
         </div>
     );
 }
