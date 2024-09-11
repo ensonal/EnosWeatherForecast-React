@@ -13,9 +13,10 @@ interface DataTableProps {
     columns: Column[];
     data: any[];
     onRowClick: (row: any) => void;
+    loading?: boolean;
 }
 
-const DataTable: React.FC<DataTableProps> = ({ title, columns, data, onRowClick }) => {
+const DataTable: React.FC<DataTableProps> = ({ title, columns, data, onRowClick, loading }) => {
     const containerStyle: React.CSSProperties = {
         display: "grid",
         gridTemplateColumns: `repeat(${columns.length}, auto)`,
@@ -25,14 +26,22 @@ const DataTable: React.FC<DataTableProps> = ({ title, columns, data, onRowClick 
     return (
         <div className="table-container d-flex flex-column">
             <div className="table-title-container">
-                <p className="table-title m-0">{title}</p>
+                {loading ? (
+                    <p className="placeholder-glow m-0 w-50">
+                        <span className="placeholder rounded-3 w-100"></span>
+                    </p>
+                ) : (
+                    <p className="table-title m-0">{title}</p>
+                )}
             </div>
+
             <div style={containerStyle}>
                 {columns.map((column, index) => (
                     <TableColumnCell
                         key={index}
                         content={column.header}
                         isLastColumn={index === columns.length - 1}
+                        loading={loading}
                     />
                 ))}
 
@@ -43,6 +52,7 @@ const DataTable: React.FC<DataTableProps> = ({ title, columns, data, onRowClick 
                                 key={`${rowIndex}-${colIndex}`}
                                 content={row[column.accessor]}
                                 isLastColumn={colIndex === columns.length - 1}
+                                loading={loading}
                             />
                         ))}
                     </div>
