@@ -9,7 +9,6 @@ interface WeatherCardTableProps {
 
 export function WeatherCardTable({ title, data, onRowClick, loading }: WeatherCardTableProps) {
     const renderCard = (rowData: any) => {
-        console.log("columns", rowData);
         return (
             <div className="d-flex flex-row justify-content-between gap-2">
                 <div className="d-flex flex-column flex-wrap">
