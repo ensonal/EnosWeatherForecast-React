@@ -43,9 +43,9 @@ This project is built entirely with React and its related packages, utilizing co
 <img src="Doc%20Images/webSearchInitial.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
 3. Enter the name of a city in the search box. You can use autocomple suggestion with GeoDB or just press "Enter" key.
 <img src="Doc%20Images/webWithAutoComplete.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
-4. The application will display the weather forecast for the next 7 days in a table.
+4. The application will display the weather forecast for the next 7 days in a table. In addition to this, if you want to search for a city that you have already searched before, the city data is cached in sessionStorage, so it will be retrieved without making a new API request.
 <img src="Doc%20Images/webWithData.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
-5. Click any day on the table to view detailed weather information on the data display card.
+6. Click any day on the table to view detailed weather information on the data display card.
 <img src="Doc%20Images/webClickableRow2.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
 6. If there is no result, you can see empty state page.
 <img src="Doc%20Images/homeEmptyState.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
