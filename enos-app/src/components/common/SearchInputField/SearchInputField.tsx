@@ -14,7 +14,7 @@ const fetchCitySuggestions = async (searchTerm: string) => {
     });
 
     const data = await response.json();
-    return data.data.map((city: any) => `${city.name}`);
+    return data?.data?.map((city: any) => `${city.name}`);
 };
 
 export function SearchInputField() {
@@ -54,6 +54,25 @@ export function SearchInputField() {
         }
     }, [debouncedSearchTerm]);
 
+    useEffect(() => {
+        if (suggestions.length > 0) {
+            const inputElement = document.querySelector('.input-container') as HTMLElement | null;
+            const suggestionsElement = document.querySelector('.autocomplete-suggestions') as HTMLElement | null;
+    
+            if (!inputElement) {
+                console.error('Input element not found');
+            }
+            if (!suggestionsElement) {
+                console.error('Suggestions element not found');
+            }
+    
+            if (inputElement && suggestionsElement) {
+                const inputWidth = inputElement.getBoundingClientRect().width;
+                suggestionsElement.style.width = `${inputWidth}px`;
+            }
+        }
+    }, [suggestions]);    
+       
     return (
         <div className="d-flex flex-column gap-3 align-items-center">
             <div className="default-card input-container d-flex flex-column align-items-center justify-content-between w-100">
