@@ -25,4 +25,8 @@
         border: 1px solid var(--default-card-border-color);
         border-radius: 12px;
     }
+
+    @media screen and (max-width: 768px) {
+        --default-page-padding: 5%;
+    }
 }
