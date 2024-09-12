@@ -14,6 +14,7 @@ const fetchCitySuggestions = async (searchTerm: string) => {
     });
 
     const data = await response.json();
+    if(data === undefined) return [];
     return data?.data?.map((city: any) => `${city.name}`);
 };
 
@@ -22,7 +23,7 @@ export function SearchInputField() {
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const { fetchWeather, loading } = useWeatherContext();
 
-    const debouncedSearchTerm = useDebounce(searchTerm, 300);
+    const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
     const handleSearch = async () => {
         if (!debouncedSearchTerm) return;
@@ -103,7 +104,7 @@ export function SearchInputField() {
                     />
                 </div>
             </div>
-            {debouncedSearchTerm && (
+            {suggestions.length > 0 && (
                 <div className="default-card autocomplete-suggestions d-flex flex-column gap-1">
                     {suggestions.map((suggestion, index) => (
                         <div
