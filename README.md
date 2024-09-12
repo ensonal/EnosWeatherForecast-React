@@ -39,10 +39,15 @@ This project is built entirely with React and its related packages, utilizing co
 
 1. Open the application in your browser at http://localhost:3000(or desired port).
 2. Here in the home page, click "Let's try" button.
-<img src
-4. Enter the name of a city in the search box.
-5. The application will display the weather forecast for the next 7 days in a table.
-6. Click any day on the table to view detailed weather information on the data display card.
+<img src="Doc%20Images/webHome.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
+<img src="Doc%20Images/webSearchInitial.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
+3. Enter the name of a city in the search box. You can use autocomple suggestion with GeoDB or just press "Enter" key.
+<img src="Doc%20Images/webWithAutoComplete.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
+4. The application will display the weather forecast for the next 7 days in a table.
+<img src="Doc%20Images/webWithData.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
+5. Click any day on the table to view detailed weather information on the data display card.
+<img src="Doc%20Images/webClickableRow2.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
+
 ## Contact
 
 Your Name - [@ensonal](https://github.com/ensonal) - enes.onal.w@gmail.com
