@@ -9,7 +9,7 @@ const fetchCitySuggestions = async (searchTerm: string) => {
         method: "GET",
         headers: {
             "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-            "x-rapidapi-key": "bbb2600f3fmsh692deb780e023b7p1aa4d8jsn4ebb08a51ab0"
+            "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_KEY as string,
         }
     });
 
