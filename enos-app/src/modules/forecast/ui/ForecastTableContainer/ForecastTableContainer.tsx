@@ -43,7 +43,6 @@ export function ForecastTableContainer() {
             ) : isMobile ? (
                 <WeatherCardTable
                     title={title}
-                    columns={columns}
                     data={forecastData ? forecastData : []}
                     onRowClick={handleRowClick}
                     loading={loading}
