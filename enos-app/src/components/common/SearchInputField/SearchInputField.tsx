@@ -55,23 +55,31 @@ export function SearchInputField() {
     }, [debouncedSearchTerm]);
 
     useEffect(() => {
-        if (suggestions.length > 0) {
-            const inputElement = document.querySelector('.input-container') as HTMLElement | null;
-            const suggestionsElement = document.querySelector('.autocomplete-suggestions') as HTMLElement | null;
+        const inputElement = document.querySelector('.input-container') as HTMLElement | null;
+        const suggestionsElement = document.querySelector('.autocomplete-suggestions') as HTMLElement | null;
     
-            if (!inputElement) {
-                console.error('Input element not found');
-            }
-            if (!suggestionsElement) {
-                console.error('Suggestions element not found');
-            }
-    
-            if (inputElement && suggestionsElement) {
-                const inputWidth = inputElement.getBoundingClientRect().width;
-                suggestionsElement.style.width = `${inputWidth}px`;
-            }
+        if (!inputElement || !suggestionsElement) {
+            console.log('Input or suggestions element not found');
+            return;
         }
-    }, [suggestions]);    
+    
+        const handleResize = () => {
+            const inputWidth = inputElement.getBoundingClientRect().width;
+            const inputHeight = inputElement.getBoundingClientRect().height;
+    
+            suggestionsElement.style.width = `${inputWidth}px`;
+            suggestionsElement.style.top = `${inputHeight + 130}px`;
+        };
+    
+        handleResize();
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [suggestions]);
+    
        
     return (
         <div className="d-flex flex-column gap-3 align-items-center">
@@ -95,7 +103,7 @@ export function SearchInputField() {
                     />
                 </div>
             </div>
-            {suggestions.length > 0 && (
+            {debouncedSearchTerm && (
                 <div className="default-card autocomplete-suggestions d-flex flex-column gap-1">
                     {suggestions.map((suggestion, index) => (
                         <div
