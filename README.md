@@ -45,6 +45,6 @@ _Below is an example of how you can instruct your audience on installing and set
 dasdasd
 ## Contact
 
-Your Name - [@ensonal](https://github.com/your_username) - enes.onal.w@gmail.com
+Your Name - [@ensonal](https://github.com/ensonal) - enes.onal.w@gmail.com
 
 Project Link: [https://github.com/ensonal/EnosWeatherForecast-React](https://github.com/ensonal/EnosWeatherForecast-React)
