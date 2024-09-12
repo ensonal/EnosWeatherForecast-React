@@ -104,7 +104,7 @@ export function SearchInputField() {
                     />
                 </div>
             </div>
-            {suggestions.length > 0 && (
+            {suggestions?.length > 0 && (
                 <div className="default-card autocomplete-suggestions d-flex flex-column gap-1">
                     {suggestions.map((suggestion, index) => (
                         <div
