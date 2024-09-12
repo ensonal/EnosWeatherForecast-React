@@ -47,6 +47,15 @@ This project is built entirely with React and its related packages, utilizing co
 <img src="Doc%20Images/webWithData.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
 5. Click any day on the table to view detailed weather information on the data display card.
 <img src="Doc%20Images/webClickableRow2.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
+6. If there is no result, you can see empty state page.
+<img src="Doc%20Images/homeEmptyState.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
+7. Also, you can use this app on your mobile devices.
+<div class="d-flex flex-row">
+<img src="Doc%20Images/mobileHome.png" alt="Alt Text" width="200" height="auot" style="object-fit: contain;" />
+<img src="Doc%20Images/mobileAutoComplete.png" alt="Alt Text" width="200" height="auot" style="object-fit: contain;" />
+<img src="Doc%20Images/mobileWithData.png" alt="Alt Text" width="200" height="auot" style="object-fit: contain;" />
+<img src="Doc%20Images/mobileEmpty.png" alt="Alt Text" width="200" height="auot" style="object-fit: contain;" />
+</div>
 
 ## Contact
 
