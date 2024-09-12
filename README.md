@@ -37,7 +37,7 @@ This project is built entirely with React and its related packages, utilizing co
 4. You don't have to set any API_KEY. If you wan't you can use your own API_KEYs for Weatherbit and GeoDB.
 ## Usage
 
-1. Open the application in your browser at http://localhost:3000(or desired port).
+1. Open the application in your browser at http://localhost:3000 (or desired port).
 2. Here in the home page, click "Let's try" button.
 <img src="Doc%20Images/webHome.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
 <img src="Doc%20Images/webSearchInitial.png" alt="Alt Text" width="auto" height="300" style="object-fit: contain;" />
