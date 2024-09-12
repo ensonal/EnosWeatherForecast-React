@@ -16,27 +16,8 @@
     text-align: left;
 }
 
-.card-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-}
-
-.card-column {
-    flex: 1;
-    margin-right: 8px;
-}
-
-.column-header {
-    font-weight: bold;
-}
-
-.column-data {
-    margin-top: 4px;
-}
-
 .weather-card {
-    padding: 16px;
+    padding: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -48,4 +29,8 @@
 .divider {
     height: 1px;
     background-color: #e0e0e0;
+}
+
+.data-text {
+    font-size: 0.875rem;
 }
