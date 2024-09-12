@@ -77,11 +77,11 @@ export function SearchInputField() {
                 </div>
             </div>
             {suggestions.length > 0 && (
-                <div className="default-card autocomplete-suggestions p-2">
+                <div className="default-card autocomplete-suggestions d-flex flex-column gap-1">
                     {suggestions.map((suggestion, index) => (
                         <div
                             key={index}
-                            className="suggestion-item"
+                            className="suggestion-item p-2"
                             onClick={() => handleSuggestionClick(suggestion)}
                         >
                             {suggestion}
