@@ -22,7 +22,7 @@ export function SearchInputField() {
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const { fetchWeather, loading } = useWeatherContext();
 
-    const debouncedSearchTerm = useDebounce(searchTerm, 200);
+    const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
     const handleSearch = async () => {
         if (!debouncedSearchTerm) return;
